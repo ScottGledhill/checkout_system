@@ -1,3 +1,4 @@
+
 class Checkout
   attr_reader :basket
 
@@ -5,7 +6,7 @@ class Checkout
     @basket = []
   end
 
-  def scan(item)
+  def scan(item = Items.new)
     basket << item
   end
 
