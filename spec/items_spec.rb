@@ -6,7 +6,7 @@ describe Items do
   subject(:items) {described_class}
 
   it 'Can show price' do
-    expect(items.lavender_heart[2]).to eq '£9.25'
+    expect(items.lavender_heart[2]).to eq "9.25"
   end
 
   it 'Can show name' do

@@ -5,11 +5,9 @@ describe Checkout do
   subject(:checkout) {described_class.new}
   subject(:item) {Items}
 
-  it {is_expected.to respond_to(:scan)}
-
   it 'Scans items' do
-    checkout.scan("Lavender heart")
-    expect(checkout.basket).to include "Lavender heart"
+    checkout.scan(item.lavender_heart)
+    expect(checkout.basket).to include 9
   end
 
   it 'Totals items' do

@@ -9,10 +9,10 @@ class Checkout
   end
 
   def scan(item)
-    basket << item[2]
+    basket << item[2].to_i.to_f
   end
 
   def total
-    basket
+    @basket = basket.inject(:+)
   end
 end
