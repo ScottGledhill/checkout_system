@@ -1,10 +1,15 @@
 class Checkout
-  attr_reader :item, :basket
+  attr_reader :basket
+
+  def initialize
+    @basket = []
+  end
+
   def scan(item)
-    @item = item
+    @basket << item
   end
 
   def total
-    @basket
+    basket
   end
 end

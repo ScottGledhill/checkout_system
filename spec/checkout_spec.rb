@@ -7,7 +7,7 @@ describe Checkout do
 
   it 'Scans items' do
     checkout.scan("Lavender heart")
-    expect(checkout.item).to eq "Lavender heart"
+    expect(checkout.basket).to include "Lavender heart"
   end
 
   it 'Totals items' do
