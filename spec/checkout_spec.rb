@@ -9,4 +9,8 @@ describe Checkout do
     checkout.scan("Lavender heart")
     expect(checkout.item).to eq "Lavender heart"
   end
+
+  it 'Totals items' do
+    expect(checkout.total).to eq checkout.basket
+  end
 end
