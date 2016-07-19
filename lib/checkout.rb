@@ -9,7 +9,7 @@ class Checkout
   end
 
   def scan(item)
-    basket << item[2].to_i.to_f
+    basket << item[2].to_f
   end
 
   def total
