@@ -3,6 +3,7 @@ require 'Checkout'
 
 describe Checkout do
   subject(:checkout) {described_class.new}
+
   it {is_expected.to respond_to(:scan)}
 
   it 'Scans items' do
@@ -12,5 +13,12 @@ describe Checkout do
 
   it 'Totals items' do
     expect(checkout.total).to eq checkout.basket
+  end
+
+  it 'Total items' do
+    checkout.scan('001')
+    checkout.scan('002')
+    checkout.scan('003')
+    expect(checkout.basket).to eq '£66.78'
   end
 end

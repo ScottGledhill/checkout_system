@@ -6,7 +6,7 @@ class Checkout
   end
 
   def scan(item)
-    @basket << item
+    basket << item
   end
 
   def total
