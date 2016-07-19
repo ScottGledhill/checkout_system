@@ -1,4 +1,6 @@
 class Checkout
-  def scan
+  attr_reader :item
+  def scan(item)
+    @item = item
   end
 end
