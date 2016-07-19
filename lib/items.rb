@@ -1,6 +1,5 @@
 
 module Items
-
   def self.lavender_heart
     ['001', "Lavender heart", '£9.25']
   end

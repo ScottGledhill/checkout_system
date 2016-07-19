@@ -1,5 +1,7 @@
+require 'items'
 
 class Checkout
+  include Items
   attr_reader :basket
 
   def initialize
@@ -7,7 +9,7 @@ class Checkout
   end
 
   def scan(item)
-    basket << item
+    basket << item[2]
   end
 
   def total
