@@ -6,7 +6,7 @@ class Checkout
     @basket = []
   end
 
-  def scan(item = Items.new)
+  def scan(item)
     basket << item
   end
 
