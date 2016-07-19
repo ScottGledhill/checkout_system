@@ -5,13 +5,13 @@ describe Checkout do
   subject(:checkout) {described_class.new}
   subject(:item) {Items}
 
-  it 'Scans items' do
+  it 'Scans items into basket' do
     checkout.scan(item.lavender_heart)
-    expect(checkout.basket).to include 9
+    expect(checkout.basket).to eq [9.25]
   end
 
   it 'Totals items' do
-    expect(checkout.total).to eq checkout.basket
+    expect(checkout.total).to eq checkout.total_after_discounts
   end
 
   it 'Total items' do
@@ -19,7 +19,7 @@ describe Checkout do
     checkout.scan(item.personalised_cufflinks)
     checkout.scan(item.kids_tshirt)
     checkout.total
-    expect(checkout.basket).to eq '£66.78'
+    expect(checkout.total_after_discounts).to eq 74.2
   end
 
   it 'Total items' do
@@ -27,7 +27,7 @@ describe Checkout do
     checkout.scan(item.kids_tshirt)
     checkout.scan(item.lavender_heart)
     checkout.total
-    expect(checkout.basket).to eq '£36.95'
+    expect(checkout.total_after_discounts).to eq 38.45
   end
 
   it 'Total items' do
@@ -36,6 +36,6 @@ describe Checkout do
     checkout.scan(item.lavender_heart)
     checkout.scan(item.kids_tshirt)
     checkout.total
-    expect(checkout.basket).to eq '£73.76'
+    expect(checkout.total_after_discounts).to eq 83.45
   end
 end
