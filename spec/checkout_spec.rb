@@ -10,10 +10,6 @@ describe Checkout do
     expect(checkout.basket).to eq [9.25]
   end
 
-  it 'Totals items' do
-    expect(checkout.total).to eq checkout.total_after_discounts
-  end
-
   it 'Total items' do
     checkout.scan(item.lavender_heart)
     checkout.scan(item.personalised_cufflinks)

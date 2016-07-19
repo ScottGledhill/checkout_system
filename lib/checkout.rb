@@ -1,11 +1,13 @@
 require 'items'
 require 'ten_percent'
+require 'multibuy'
 
 class Checkout
   include Items
-  attr_reader :basket, :ten, :total_after_discounts
+  attr_reader :basket, :ten, :total_after_discounts, :multibuy
 
-  def initialize(ten = Ten_percent_off.new)
+  def initialize(ten = Ten_percent_off.new, multibuy = Multibuy.new)
+    @multibuy = multibuy
     @ten = ten
     @basket = []
     @total_after_discounts
