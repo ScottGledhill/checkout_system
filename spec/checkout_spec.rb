@@ -21,4 +21,19 @@ describe Checkout do
     checkout.scan('003')
     expect(checkout.basket).to eq '£66.78'
   end
+
+  it 'Total items' do
+    checkout.scan('001')
+    checkout.scan('003')
+    checkout.scan('001')
+    expect(checkout.basket).to eq '£36.95'
+  end
+
+  it 'Total items' do
+    checkout.scan('001')
+    checkout.scan('002')
+    checkout.scan('001')
+    checkout.scan('003')
+    expect(checkout.basket).to eq '£73.76'
+  end
 end
