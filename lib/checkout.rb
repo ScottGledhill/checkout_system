@@ -39,7 +39,7 @@ class Checkout
   end
 
   def ten_percent_discount_check
-    @ten.ten_percent(@total_after_multibuy)
+    @ten.ten_percent(total_after_multibuy)
   end
 
   def multibuy_discount_check
