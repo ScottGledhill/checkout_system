@@ -1,6 +1,6 @@
 # Checkout System
 =================
-A simple checkout system with promotions.
+A simple checkout system with addded promotions.
 
 #Installation
 [download](https://www.ruby-lang.org/en/downloads/) and install ruby if you don't already have it installed.
