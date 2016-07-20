@@ -1,14 +1,14 @@
 
 module Items
   def self.lavender_heart
-    ['001', "Lavender heart", '9.25']
+    {id: '001', name: "Lavender heart", price: 9.25}
   end
 
   def self.personalised_cufflinks
-    ['002', "Personalised cufflinks", '45.00']
+    {id: '002', name: "Personalised cufflinks", price: 45.00}
   end
 
   def self.kids_tshirt
-    ['003', "Kids T-shirt", '19.95']
+    {id: '003', name: "Kids T-shirt", price: 19.95}
   end
 end

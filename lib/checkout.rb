@@ -4,21 +4,23 @@ require 'multibuy'
 
 class Checkout
   include Items
-  attr_reader :basket, :ten, :total_after_discounts, :multibuy
+  attr_reader :basket, :ten, :total_after_multibuy, :multibuy
 
   def initialize(ten = Ten_percent_off.new, multibuy = Multibuy.new)
     @multibuy = multibuy
     @ten = ten
     @basket = []
-    @total_after_discounts
+    @total_after_multibuy
   end
 
   def scan(item)
-    basket << item[2].to_f
+    basket << item
   end
 
   def total
-    @total_after_discounts = basket.inject(:+)
-    @ten.ten_percent(total_after_discounts)
+    @multibuy.multibuy_discount(basket)
+    all_prices = basket.map {|item| item[:price]}
+    @total_after_multibuy = all_prices.inject(:+)
+    @ten.ten_percent(total_after_multibuy)
   end
 end
