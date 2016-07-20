@@ -14,7 +14,11 @@ class Checkout
   end
 
   def scan(item)
-    basket << item
+    if item_check(item)
+      basket << item
+    else
+      error
+    end
   end
 
   def total
@@ -25,7 +29,15 @@ class Checkout
   end
 
   private
-  
+
+  def item_check(item)
+    item == Items.lavender_heart || item == Items.personalised_cufflinks || item == Items.kids_tshirt
+  end
+
+  def error
+    "error processing item"
+  end
+
   def ten_percent_discount_check
     @ten.ten_percent(@total_after_multibuy)
   end
