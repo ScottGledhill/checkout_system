@@ -7,6 +7,8 @@ class Multibuy
     end
   end
 
+  private
+  
   def discount_valid?(basket)
     counted = Hash.new(0)
     basket.each { |h| counted[h[:name]] += 1 }
